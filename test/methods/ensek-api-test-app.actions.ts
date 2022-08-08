@@ -24,15 +24,10 @@ export class EnsekApiTestAppActions {
     };
 
     static async checkOrders(energyType: string, unitsSold: number) {
-        const lengthOfEnergyTypeName = energyType.length;
-        const lengthOfSlice = lengthOfEnergyTypeName - 1;
         const now = DateTime.now().toHTTP().toString();
-
-        console.log(now);
 
         const response =  await request(baseUrl).get(`/orders`);
         expect(JSON.stringify(response.body)).toContain(`"fuel":"${energyType}","quantity":${unitsSold},"time":"${now.slice(0, -6)}`);
-        //need to remove seconds from this!!!
     };
 
     static async resetEnergyDataToDefault() {

@@ -53,8 +53,6 @@ describe('purchase energy tests', () => {
         beforeAll(async () => {
             startingOilAmount = await EnsekApiTestAppActions.getSingleCurrentEnergyUnitAmount('oil');
             await EnsekApiTestAppActions.buyEnergy(4, 500);
-            console.log(startingOilAmount);
-            console.log(startingOilAmount - 500);
         })
 
         it('reduces the available oil by 500 units', async () => {
