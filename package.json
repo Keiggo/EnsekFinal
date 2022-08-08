@@ -11,15 +11,7 @@
     ]
   },
   "scripts": {
-    "test": "jest --group=regression --runInBand --detectOpenHandles --setupFiles ./environments/test.env",
-    "test:smoke": "jest --group=smoke-test --runInBand --detectOpenHandles --setupFiles ./environments/test.env",
-    "test:local:regression": "jest --group=regression --runInBand --verbose --detectOpenHandles --setupFiles ./environments/local.env",
-    "test:local:smoke": "jest --group=smoke-test --runInBand --verbose --detectOpenHandles --setupFiles ./environments/local.env",
-    "test:local:ui": "jest --group=ui --runInBand --verbose --detectOpenHandles --setupFiles ./environments/local.env",
-    "test:local:api": "jest --group=api --runInBand --verbose --detectOpenHandles --setupFiles ./environments/local.env",
-    "lint:fix": "eslint --fix **/*.ts",
-    "build:check": "npm run lint:fix && tsc --noEmit",
-    "refreshVSToken": "vsts-npm-auth -config .npmrc"
+    "test": "jest --runInBand --detectOpenHandles"
   },
   "keywords": [
     "jest"
