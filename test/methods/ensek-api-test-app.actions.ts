@@ -1,5 +1,5 @@
-import request from "supertest";
-import { DateTime } from "luxon";
+import request from 'supertest';
+import { DateTime } from 'luxon';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // this is to bypass certification errors
 
@@ -39,14 +39,14 @@ export class EnsekApiTestAppActions {
     static async checkNoEnergyMessage(energyId: number, energyName: string) {
         const response = await this.buyEnergy(energyId, 500);
         expect(JSON.stringify(response.body)).toBe(`{"message":"There is no ${energyName} fuel to purchase!"}`);    
-    }
+    };
 
     static async getAllCurrentEnergyUnitAmounts() {
         return await (await request(baseUrl).get('/energy')).body;
-    }
+    };
 
     static async getSingleCurrentEnergyUnitAmount(energyType: string) {
         const allEnergyUnitAmounts = await this.getAllCurrentEnergyUnitAmounts();
         return await allEnergyUnitAmounts[energyType].quantity_of_units;
-    }
-}
+    };
+};
