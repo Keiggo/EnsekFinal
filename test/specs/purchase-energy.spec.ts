@@ -8,8 +8,8 @@ describe('purchase energy tests', () => {
         let startingElectricityAmount: number;
 
         beforeAll(async () => {
-            await EnsekApiTestAppActions.resetEnergyDataToDefault();
-            //This will currently fail as the reset call doesn't work
+            // await EnsekApiTestAppActions.resetEnergyDataToDefault();
+            //This will currently fail as the reset call doesn't work, and causes other tests to throw a 401, for some reason!!!
 
             startingElectricityAmount = await EnsekApiTestAppActions.getSingleCurrentEnergyUnitAmount('electric');
             await EnsekApiTestAppActions.buyEnergy(EnergyType.Electric, buyAmount);
@@ -68,9 +68,5 @@ describe('purchase energy tests', () => {
             await EnsekApiTestAppActions.checkOrders('Oil', buyAmount);
             //I've added a capital O to oil. Do we want that? Or is this a reportable defect?
         });
-    });
-
-    afterAll(async () => {
-
     });
 });

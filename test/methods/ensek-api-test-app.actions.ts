@@ -1,6 +1,5 @@
 import request from 'supertest';
 import { DateTime } from 'luxon';
-import { EnergyType } from 'test/enums/energy-type.enums';
 import { DefaultEnergyUnitAmounts } from 'test/enums/default-energy-unit-amounts.enum';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // this is to bypass certification errors
