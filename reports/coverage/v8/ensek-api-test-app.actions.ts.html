@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.46% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>33/52</span>
+                <span class='fraction'>52/52</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.5% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.46% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>33/52</span>
+                <span class='fraction'>52/52</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -124,13 +124,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -140,31 +140,31 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import request from "supertest";
 import { DateTime } from "luxon";
 &nbsp;
@@ -174,14 +174,14 @@ const baseUrl = 'https://ensekapicandidatetest.azurewebsites.net/';
 &nbsp;
 export class EnsekApiTestAppActions {
 &nbsp;
-    static <span class="fstat-no" title="function not covered" >async buyEnergy(energyId: number, quantity: number) {</span>
-<span class="cstat-no" title="statement not covered" >        return await request(baseUrl).put(`/buy/${energyId}/${quantity}`)</span>
-<span class="cstat-no" title="statement not covered" >        .expect(200);</span>
+    static async buyEnergy(energyId: number, quantity: number) {
+        return await request(baseUrl).put(`/buy/${energyId}/${quantity}`)
+        .expect(200);
     };
     
-    static <span class="fstat-no" title="function not covered" >async checkEnergyUnits(energyType: string, startingAmount: number, amountBought: number) {</span>
-<span class="cstat-no" title="statement not covered" >        const response = await this.getAllCurrentEnergyUnitAmounts();</span>
-<span class="cstat-no" title="statement not covered" >        expect(response[energyType].quantity_of_units).toBe(startingAmount - amountBought);</span>
+    static async checkEnergyUnits(energyType: string, startingAmount: number, amountBought: number) {
+        const response = await this.getAllCurrentEnergyUnitAmounts();
+        expect(response[energyType].quantity_of_units).toBe(startingAmount - amountBought);
     };
 &nbsp;
     static async login(username: string, password: string, expectedResponse: number) {
@@ -190,32 +190,32 @@ export class EnsekApiTestAppActions {
         .expect(expectedResponse);
     };
 &nbsp;
-    static <span class="fstat-no" title="function not covered" >async checkOrders(energyType: string, unitsSold: number) {</span>
-<span class="cstat-no" title="statement not covered" >        const now = DateTime.now().toHTTP().toString();</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >        const response =  await request(baseUrl).get(`/orders`);</span>
-<span class="cstat-no" title="statement not covered" >        expect(JSON.stringify(response.body)).toContain(`"fuel":"${energyType}","quantity":${unitsSold},"time":"${now.slice(0, -6)}`);</span>
+    static async checkOrders(energyType: string, unitsSold: number) {
+        const now = DateTime.now().toHTTP().toString();
+&nbsp;
+        const response =  await request(baseUrl).get(`/orders`);
+        expect(JSON.stringify(response.body)).toContain(`"fuel":"${energyType}","quantity":${unitsSold},"time":"${now.slice(0, -6)}`);
     };
 &nbsp;
-    static <span class="fstat-no" title="function not covered" >async resetEnergyDataToDefault() {</span>
-<span class="cstat-no" title="statement not covered" >        return await request(baseUrl).post('/reset')</span>
-<span class="cstat-no" title="statement not covered" >        .send('')</span>
-<span class="cstat-no" title="statement not covered" >        .expect(200);</span>
+    static async resetEnergyDataToDefault() {
+        return await request(baseUrl).post('/reset')
+        .send('')
+        .expect(200);
     };
 &nbsp;
-    static <span class="fstat-no" title="function not covered" >async checkNoEnergyMessage(energyId: number, energyName: string) {</span>
-<span class="cstat-no" title="statement not covered" >        const response = await this.buyEnergy(energyId, 500);</span>
-<span class="cstat-no" title="statement not covered" >        expect(JSON.stringify(response.body)).toBe(`{"message":"There is no ${energyName} fuel to purchase!"}`);    </span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    static async checkNoEnergyMessage(energyId: number, energyName: string) {
+        const response = await this.buyEnergy(energyId, 500);
+        expect(JSON.stringify(response.body)).toBe(`{"message":"There is no ${energyName} fuel to purchase!"}`);    
+    }
 &nbsp;
-    static <span class="fstat-no" title="function not covered" >async getAllCurrentEnergyUnitAmounts() {</span>
-<span class="cstat-no" title="statement not covered" >        return await (await request(baseUrl).get('/energy')).body;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    static async getAllCurrentEnergyUnitAmounts() {
+        return await (await request(baseUrl).get('/energy')).body;
+    }
 &nbsp;
-    static <span class="fstat-no" title="function not covered" >async getSingleCurrentEnergyUnitAmount(energyType: string) {</span>
-<span class="cstat-no" title="statement not covered" >        const allEnergyUnitAmounts = await this.getAllCurrentEnergyUnitAmounts();</span>
-<span class="cstat-no" title="statement not covered" >        return await allEnergyUnitAmounts[energyType].quantity_of_units;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+    static async getSingleCurrentEnergyUnitAmount(energyType: string) {
+        const allEnergyUnitAmounts = await this.getAllCurrentEnergyUnitAmounts();
+        return await allEnergyUnitAmounts[energyType].quantity_of_units;
+    }
 }</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -223,7 +223,7 @@ export class EnsekApiTestAppActions {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-08-08T19:25:07.603Z
+                at 2022-08-08T19:31:24.127Z
             </div>
         <script src="prettify.js"></script>
         <script>

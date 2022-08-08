@@ -1,15 +1,5 @@
 {
-  "name": "mica-4-e2e",
-  "version": "0.0.1",
-  "description": "End to end tests for MICA 4",
-  "@comment scripts": {
-    "build:check": [
-      "Checks that the project builds.",
-      "Use CTRL-SHIFT-P > Tasks: Configure Default Build and select npm: build:check to set this as the default build task.",
-      "Set problemMatcher to '$tsc'",
-      "CTRL-SHIFT-B will then check the entire project and highlight any issues in the PROBLEMS pane."
-    ]
-  },
+  "name": "ensek_test",
   "scripts": {
     "test": "jest --runInBand --detectOpenHandles"
   },
@@ -17,7 +7,7 @@
     "jest"
   ],
   "author": {
-    "name": "Telent"
+    "name": "Keiggo"
   },
   "private": true,
   "license": "ISC",

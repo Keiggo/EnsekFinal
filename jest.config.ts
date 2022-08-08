@@ -26,7 +26,7 @@ const config: Config.InitialOptions = {
     reporters: [
         'default',
         ['./node_modules/jest-html-reporter', {
-            'pageTitle': 'MICA 4 E2E Test Report',
+            'pageTitle': 'Test app',
             'includeFailureMsg': true,
             'includeConsoleLog': true,
             'outputPath': `reports/jest-basic/Basic Report - ${DateTime.now().toFormat('dd-MM-yyyy hh.mm')}.html`,
@@ -36,7 +36,7 @@ const config: Config.InitialOptions = {
             'filename': `jest-report - ${DateTime.now().toFormat('dd-MM-yyyy hh.mm')}.html`,
             'pageTitle': 'Test Report',
             'expand': false,
-            'customInfos': [{​​title: 'MICA 4' }​​],
+            'customInfos': [{​​title: 'Test app' }​​],
             'includeConsoleLog': true,
         }​​]
     ],
