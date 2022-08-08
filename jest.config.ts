@@ -25,16 +25,6 @@ const config: Config.InitialOptions = {
     // The other two are different HTML reports - chose your preferred one and delete the other
     reporters: [
         'default',
-        ['jest-junit', {
-            'suiteName': 'MICA 4 E2E Tests',
-            'outputDirectory': 'reports/jest-junit',
-            'outputName': `Jest Results - ${DateTime.now().toFormat('dd-MM-yyyy hh.mm')}.xml`,
-            'suiteNameTemplate': '{title}',
-            'classNameTemplate': '{classname}-{title}',
-            'titleTemplate': '{classname}-{title}',
-            'ancestorSeparator': ' › ',
-            'includeShortConsoleOutput': true,
-        }],
         ['./node_modules/jest-html-reporter', {
             'pageTitle': 'MICA 4 E2E Test Report',
             'includeFailureMsg': true,
