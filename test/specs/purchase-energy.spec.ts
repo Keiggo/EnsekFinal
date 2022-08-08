@@ -8,8 +8,11 @@ describe('purchase energy tests', () => {
         let startingElectricityAmount: number;
 
         beforeAll(async () => {
+            await EnsekApiTestAppActions.resetEnergyDataToDefault();
+            //This will currently fail as the reset call doesn't work
+
             startingElectricityAmount = await EnsekApiTestAppActions.getSingleCurrentEnergyUnitAmount('electric');
-            await EnsekApiTestAppActions.buyEnergy(EnergyType.Electricity, buyAmount);
+            await EnsekApiTestAppActions.buyEnergy(EnergyType.Electric, buyAmount);
         });
 
         it('reduces the available electric by 500 units', async () => {
@@ -68,6 +71,6 @@ describe('purchase energy tests', () => {
     });
 
     afterAll(async () => {
-        await EnsekApiTestAppActions.resetEnergyDataToDefault();
+
     });
 });

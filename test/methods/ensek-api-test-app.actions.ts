@@ -1,5 +1,7 @@
 import request from 'supertest';
 import { DateTime } from 'luxon';
+import { EnergyType } from 'test/enums/energy-type.enums';
+import { DefaultEnergyUnitAmounts } from 'test/enums/default-energy-unit-amounts.enum';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // this is to bypass certification errors
 
@@ -13,7 +15,7 @@ export class EnsekApiTestAppActions {
     };
     
     static async checkEnergyUnits(energyType: string, startingAmount: number, amountBought: number) {
-        const response = await this.getAllCurrentEnergyUnitAmounts();
+        const response = await this.getAllCurrentEnergyData();
         expect(response[energyType].quantity_of_units).toBe(startingAmount - amountBought);
     };
 
@@ -31,9 +33,13 @@ export class EnsekApiTestAppActions {
     };
 
     static async resetEnergyDataToDefault() {
-        return await request(baseUrl).post('/reset')
+        await request(baseUrl).post('/reset')
         .send('')
         .expect(200);
+        expect(await this.getSingleCurrentEnergyUnitAmount('electric')).toBe(DefaultEnergyUnitAmounts.Electric);
+        expect(await this.getSingleCurrentEnergyUnitAmount('gas')).toBe(DefaultEnergyUnitAmounts.Gas);
+        expect(await this.getSingleCurrentEnergyUnitAmount('nuclear')).toBe(DefaultEnergyUnitAmounts.Nuclear);
+        expect(await this.getSingleCurrentEnergyUnitAmount('oil')).toBe(DefaultEnergyUnitAmounts.Oil);
     };
 
     static async checkNoEnergyMessage(energyId: number, energyName: string) {
@@ -41,12 +47,12 @@ export class EnsekApiTestAppActions {
         expect(JSON.stringify(response.body)).toBe(`{"message":"There is no ${energyName} fuel to purchase!"}`);    
     };
 
-    static async getAllCurrentEnergyUnitAmounts() {
+    static async getAllCurrentEnergyData() {
         return await (await request(baseUrl).get('/energy')).body;
     };
 
     static async getSingleCurrentEnergyUnitAmount(energyType: string) {
-        const allEnergyUnitAmounts = await this.getAllCurrentEnergyUnitAmounts();
+        const allEnergyUnitAmounts = await this.getAllCurrentEnergyData();
         return await allEnergyUnitAmounts[energyType].quantity_of_units;
     };
 };
