@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="MICA 4 E2E Tests" tests="4" failures="3" errors="0" time="6.3">
+  <testsuite name="purchase energy tests" errors="0" failures="0" skipped="0" timestamp="2022-08-08T10:35:06" time="3.492" tests="1">
+    <testcase classname="purchase energy tests › when -" name="purchase energy tests › when -" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="login tests" errors="0" failures="3" skipped="0" timestamp="2022-08-08T10:35:06" time="5.236" tests="3">
+    <testcase classname="login tests › when the user logs in with valid test credentials-successfully logs the user in" name="login tests › when the user logs in with valid test credentials-successfully logs the user in" time="0.613">
+      <failure>Error: expected 200 &quot;OK&quot;, got 500 &quot;Internal Server Error&quot;
+    at Function.login (F:\Projects\ensek\E2ETests\test\methods\ensek-api-test-app.actions.ts:27:10)
+    at Object.&lt;anonymous&gt; (F:\Projects\ensek\E2ETests\test\specs\login.spec.ts:8:42)
+    at Object.asyncJestTest (F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:106:37)
+    at F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:28:19)
+    at F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+----
+    at Test._assertStatus (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:252:14)
+    at F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:306:17
+    at Test._assertFunction (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:164:23)
+    at localAssert (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:120:14)
+    at fn (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:125:7)
+    at Test.callback (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\index.js:924:3)
+    at fn (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\index.js:1153:18)
+    at IncomingMessage.&lt;anonymous&gt; (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\parsers\json.js:19:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)</failure>
+    </testcase>
+    <testcase classname="login tests › when the user logs in with invalid credentials-prevents the user from logging in" name="login tests › when the user logs in with invalid credentials-prevents the user from logging in" time="0.559">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 500 &quot;Internal Server Error&quot;
+    at Function.login (F:\Projects\ensek\E2ETests\test\methods\ensek-api-test-app.actions.ts:27:10)
+    at Object.&lt;anonymous&gt; (F:\Projects\ensek\E2ETests\test\specs\login.spec.ts:15:42)
+    at Object.asyncJestTest (F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:106:37)
+    at F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:28:19)
+    at F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+----
+    at Test._assertStatus (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:252:14)
+    at F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:306:17
+    at Test._assertFunction (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:164:23)
+    at localAssert (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:120:14)
+    at fn (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:125:7)
+    at Test.callback (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\index.js:924:3)
+    at fn (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\index.js:1153:18)
+    at IncomingMessage.&lt;anonymous&gt; (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\parsers\json.js:19:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)</failure>
+    </testcase>
+    <testcase classname="login tests › when the user logs in with blank credentials-prevents the user from logging in" name="login tests › when the user logs in with blank credentials-prevents the user from logging in" time="0.633">
+      <failure>Error: expected 401 &quot;Unauthorized&quot;, got 500 &quot;Internal Server Error&quot;
+    at Function.login (F:\Projects\ensek\E2ETests\test\methods\ensek-api-test-app.actions.ts:27:10)
+    at Object.&lt;anonymous&gt; (F:\Projects\ensek\E2ETests\test\specs\login.spec.ts:22:42)
+    at Object.asyncJestTest (F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\jasmineAsyncInstall.js:106:37)
+    at F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:45:12
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:28:19)
+    at F:\Projects\ensek\E2ETests\node_modules\jest-jasmine2\build\queueRunner.js:75:41
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+----
+    at Test._assertStatus (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:252:14)
+    at F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:306:17
+    at Test._assertFunction (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:285:13)
+    at Test.assert (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:164:23)
+    at localAssert (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:120:14)
+    at fn (F:\Projects\ensek\E2ETests\node_modules\supertest\lib\test.js:125:7)
+    at Test.callback (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\index.js:924:3)
+    at fn (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\index.js:1153:18)
+    at IncomingMessage.&lt;anonymous&gt; (F:\Projects\ensek\E2ETests\node_modules\superagent\src\node\parsers\json.js:19:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
