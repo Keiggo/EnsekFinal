@@ -62,7 +62,8 @@ describe('purchase energy tests', () => {
         })
 
         it('registers a new order has been created', async () => {
-            await EnsekApiTestAppActions.checkOrders('oil', 500);
+            await EnsekApiTestAppActions.checkOrders('Oil', 500);
+            //I've added a capital O to oil. Do we want that? Or is this a reportable defect?
         })
     })
 
