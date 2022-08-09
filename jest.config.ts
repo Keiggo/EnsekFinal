@@ -1,5 +1,4 @@
 import type { Config } from '@jest/types';
-// moment.js has been deprecated. luxon is touted as a replacement
 import { DateTime } from 'luxon';
 
 // Sync object
@@ -16,9 +15,6 @@ const config: Config.InitialOptions = {
         '^.+\\.ts?$': 'ts-jest',
     }​​,
     runner: 'groups',
-    // Details of the reporter being used. Included 3 different types here.
-    // If you want results reported in pipeline you will need to include the junit reporter.
-    // The other two are different HTML reports - chose your preferred one and delete the other
     reporters: [
         'default',
         ['./node_modules/jest-html-reporter', {
